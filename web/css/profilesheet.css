@@ -1,0 +1,128 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 18, 2017, 11:31:32 AM
+    Author     : nijin
+*/
+body {
+    height: 100vh;
+    display: flex;
+
+    /* Direction of the items, can be row or column */
+    flex-direction: column;
+   
+   margin:0;
+}
+.header{
+    background: greenyellow;
+    width:100%;
+    float:left;
+    height:18%;
+}
+.header_first{
+    float:left;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.header_search{
+      float:left;
+    margin-top:40px;
+}
+.header_search_drop{
+  margin-right: 3px;
+}
+.header_common{
+    width:100%;float:left;
+}
+.header_sec_search{
+    float:left;margin-left: 20px;margin-top:10px;margin-right: 20px;
+}
+.main_wrapper{
+    height: 63%;
+    width:100%;
+}
+.header_sec_item{
+    float:left;margin-right: 20px;margin-top:10px;
+}
+.header_sec_right{
+    float:right;margin-top:20px;margin-right: 15px;
+}
+.profile_container{
+    float: left;
+    width: 50%;
+    height: 60%;
+    padding: 2% 2%;
+    box-sizing: padding-box;
+}
+.photo_container{
+    float:left;
+    height:100%;
+    width:50%;
+    
+}
+.photo{
+    height:50%;
+    float:left;
+    width:100%;
+}
+.address{
+    height:50%;
+    float:left;
+    width:100%;
+}
+.details{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+#footer {
+    width:100%;
+    height:15%;   /* Height of the footer */
+    background:#6cf;
+}
+#algncenterdiv {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    }
+    .footer_div{
+        float:left;
+        width: 32%;
+    }
+    .centerdiv{
+       
+        text-align: center;
+    }
+    .rightdiv{
+        
+        text-align: right;
+        margin-right: 15px;
+    }
+    .leftdiv{
+        
+        text-align: left;
+        margin-left: 15px;
+        
+    }
+    .moredetail{
+     
+       padding:15px;
+       
+    }
+    .buttonpro{
+        padding-right: 15px;padding-left: 15px;padding-top: 5px;padding-bottom: 5px;border-radius: 15px;
+    }
+    
+    
+    .endbutton{       
+        
+     float: right;  
+    
+    }
+
+

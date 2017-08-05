@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
+        <script src="js/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+     
+        <div class="center"><img src="images/photo.jpg" >
+<div class="bordercenter">
+    
+    <div><font size="5" style="margin-top: 10px">Create Account</font></div>
+     <div style="margin-top: 10px">Your Name</div>
+    <div><input id="name" type="text" style="width: 100%;margin-top: 10px"/></div>
+    <div style="margin-top: 10px">Email</div>
+    <div><input id="email" type="text" style="width: 100%;margin-top: 10px"/></div>
+    <div style="margin-top: 10px">Password</div>
+    <div><input id="password" type="password" style="width: 100%;margin-top:10px"/></div>
+    <div style="margin-top: 10px">Password Again</div>
+    <div><input id="againpassword" type="password" style="width: 100%;margin-top:10px"/></div>
+    <div style="margin-top: 10px">Phone Number</div>
+    <div><input id="phonenumber" type="text" style="width: 100%;margin-top: 10px"/></div>
+    <div style="margin-top: 10px">Address</div>
+    <div><input id="address" type="text" style="width: 100%;margin-top: 10px"/></div>
+    
+    <div><button id="registerbtn" type="button" style="margin-top: 10px;width:100%;padding: 8px">Create Account</button></div>
+    <div style="margin-top: 10px">Already have an account?<a href="login.html">Sign In</a></div>
+  
+    
+   
+    </div>
+            </div>
+        <script >
+       
+    $("body").on("click","#registerbtn",function(){
+            
+            var name=$("#name").val();
+            var email=$("#email").val();
+            var password=$("#password").val();
+            var againpassword=$("#againpassword").val();
+            var phonenumber=$("#phonenumber").val();
+            var address=$("#address").val();
+            if(password==againpassword){
+            
+            $.post("http://localhost:8080/ecommerce/webresources/api/register",{name:name,email:email,password:password,phonenumber:phonenumber,address:address},function(response){
+            if(response=="1"){
+                location.href="login.html";
+            }
+            })}
+        else{
+            alert("Please match the password")
+        }
+        })
+        </script>
+    </body>
+</html>

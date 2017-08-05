@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login In</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/login.css" rel="stylesheet" type="text/css" media="all" />
+         <script src="js/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+     
+        <div class="center"><img src="images/photo.jpg" >
+<div class="bordercenter">
+    
+    <div><font size="5" style="margin-top: 10px">Sign In</font></div>
+    <div style="margin-top: 10px">Email or Phone Number</div>
+    <div><input id="email" type="text" style="width: 100%;margin-top: 10px"/></div>
+    <div style="margin-top: 10px">
+    <div style="float:left">Password</div>
+    <div style="float:right"> Forgot Password?</div>
+    </div>
+    <div><input id="password" type="password" style="width: 100%;margin-top:10px"/></div>
+    <div><button id="signinbtn" type="button" style="margin-top: 10px;width:100%;padding: 8px">Sign In</button></div>
+    <div><input id="keeplogin" type="checkbox" style="margin-top: 10px"/>Keep me signed in</div>
+    
+    <div><button id="createnew" onclick="location.href='registration.html'" type="button" style="margin-top: 10px;width:100%;padding: 2px">Create New Speedshop account</button></div>
+    </div>
+            </div>
+         <script >
+       
+    $("body").on("click","#signinbtn",function(){
+            
+            
+            var email=$("#email").val();
+            var password=$("#password").val();
+         
+            
+            $.post("http://localhost:8080/ecommerce/webresources/api/login",{email:email,password:password},function(response){
+                
+                if(response=="0"){
+                    
+                     alert("Please enter valid username and password");
+                }
+                else{
+                   location.href="profile.html?id="+response;
+                }
+           
+            })
+        
+        })
+        </script>
+    </body>
+</html>

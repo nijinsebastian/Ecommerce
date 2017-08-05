@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/profilesheet.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/home.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/newproduct.css" rel="stylesheet" type="text/css" media="all" />
+        <script src="js/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+        <div  class="header1">
+            <div class="header_common">
+                <div class="header_first"><font size="6">SpeedShop</font></div>
+                <div class="header_search_drop header_search"><select><option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select></div>
+                <div class="header_search"><input type="text" name="firstname" value="Search"></div>
+            </div>
+            <div class="header_common"> 
+               <div class="header_sec_search"><select><option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select></div>
+                <div class="header_sec_item" >Your Store</div>
+                <div class="header_sec_item">Deal Store</div>
+                <div class="header_sec_item">Gift card</div>
+                <div class="header_sec_item">Sell</div>
+                <div class="header_sec_item">Help</div>
+                
+                
+                <div class="header_sec_right" onclick="buttonClick()">Cart(<span id="cartNumber">0</span>)</div>
+                <div class="header_sec_right">Wish list</div>
+                <div class="header_sec_right" id="helloname">Hello SignIn</div>
+               
+                  
+                 
+                  
+                  <script>
+    var i = document.getElementById('cartNumber').innerHTML;
+    function buttonClick() {
+        i++;
+        document.getElementById('cartNumber').innerHTML = i;
+    }
+    function getURLParameter(email) {
+  return decodeURIComponent((new RegExp('[?|&]' + email + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+var name=null;
+
+name=getURLParameter('name');
+id=getURLParameter('id');
+var k=name.localeCompare(null);
+console.log(name);
+console.log(k);
+if(k!=0){
+$("#helloname").html(name);}
+
+
+</script>
+
+                  
+                  
+                  
+                 
+            </div>  
+        </div>
+        <script>
+             $.get("http://localhost:8080/ecommerce/webresources/api/retrive",function(response){
+                 console.log(response);
+                 var results=response["Results"];
+                 var newdiv="";
+                 for(var i=0;i<results.length;i++){
+                     
+                     newdiv+="<div class='boxes'>";
+            newdiv+="<div class='imagestyle'> <a href='newproduct.html?productid="+results[i].productid+"&name="+name+"&id="+id+"'><img src=images/photo.jpg  ></a></div>";
+           newdiv+=" <div class='name'><a href='newproduct.html?productid="+results[i].productid+"&name="+name+"&id="+id+"'>"+results[i].productname+"</a></div>";
+           newdiv+=" <div class='price'> CAD$"+results[i].prize+"</div>"
+            
+           newdiv+=" </div>";
+          
+           
+                     
+                 }
+                 $("#boxboarder1").html(newdiv);
+             
+         });
+        </script>
+        <div class="main_wrapper1">
+            <div class="boxboarder" id="boxboarder1"></div>
+        </div>
+        <div class="footer1">
+             <div  class="footer_div leftdiv">Customer Care</div>
+             <div   class="footer_div centerdiv">speedshop@shop.com</div>
+              <div class="footer_div rightdiv">18002353689</div>
+            </div>
+
+        
+        
+     
+          
+      
+
+    </body>
+</html>

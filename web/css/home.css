@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 30, 2017, 9:41:53 PM
+    Author     : nijin
+*/
+
+.boxboarder{
+    width:100%;
+    
+    float:left;
+    margin: 10px;
+}
+.boxes{
+   
+    width: 25%;
+    float:left;
+}
+.imagestyle{
+   
+    width:290px;
+    height:170px;
+}
+.name{
+     width:290px;
+    font-size: 150%;
+    text-align: center;
+    
+    
+    
+}
+a:link {
+    text-decoration: none;
+}
+.price{
+     width:290px;
+     font-size: 100%;
+    text-align: center;
+    color: red;
+}

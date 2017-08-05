@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 1, 2017, 3:56:49 AM
+    Author     : nijin
+*/
+
+body {
+    height: 100vh;
+    display: flex;
+
+    /* Direction of the items, can be row or column */
+    flex-direction: column;
+   
+   margin:0;
+}
+
+.header1
+{
+    height: 120px;
+     background:yellow;
+}
+.footer1 {
+    height: 50px;
+     background:#6cf;
+}
+
+.main_wrapper1 {
+    flex: 1;
+    width:100%;
+    
+}
+.column-left{ float: left; width: 30%; text-align: center;margin-left:30px;margin-top: 120px;}
+.column-right{ float: right; width: 20%;  }
+.column-center{ display: inline-block; width: 50%; margin-left:30px;margin-top: 80px;padding-left: 50px;}
